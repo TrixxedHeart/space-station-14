@@ -1,0 +1,37 @@
+<Document>
+  # Triggers & Effects
+
+  ## Triggers
+  Nodes require specific triggers to activate. Examples:
+  - Harmonical sound vibrations (play a musical instrument)
+  - Close inspection (examine the artifact)
+  - Low pressure (drop pressure below 50 kPa)
+  - Death (kill something nearby)
+  - Physical damage (damage the artifact)
+  - Being thrown (throw the artifact, handheld only)
+  - Blood (splash blood onto the artifact)
+  - Radiation (irradiate the artifact, e.g. uranium weapon)
+  - Magnetic waves (activate magboots nearby)
+  - Water (splash water onto the artifact)
+  - High temperature gas (raise surrounding temperature)
+  - Oxygen-free environment (remove oxygen around the artifact)
+  - High pressure (raise pressure above 300–500 kPa)
+  - Screwing (use a screwdriver on the artifact)
+  - Pulsing (use a multitool on the artifact)
+  - Low temperature gas (cool the surrounding area)
+  - Prying (use a crowbar on the artifact)
+  - Tightening (use a wrench on the artifact)
+  - Carbon dioxide (apply Carbon dioxide)
+  - Non-solid plasma (apply gaseous or liquid plasma)
+  - Nitrous oxide (apply Nitrous oxide)
+  - Regular self-activation (wait for the artifact’s timer)
+  - Tritium (apply tritium)
+  - Frezon (apply frezon)
+  - Ammonia (apply ammonia)
+
+  ## Effects
+  Activated nodes produce one effect:
+  - [color=green]Harmless:[/color] e.g. spawning plants, animals, or junk
+  - [color=#00ccff]Helpful:[/color] e.g. charging batteries, producing money, generating items
+  - [color=red]Hazardous:[/color] e.g. anomalies, radiation bursts, explosions, hostile fauna
+</Document>

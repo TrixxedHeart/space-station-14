@@ -11,20 +11,6 @@
   - Assembled from [bold]fragments[/bold]
   - Appear during certain station events
 
-  ## Artifacts
-  <Box>
-    <GuideEntityEmbed Entity="ComplexXenoArtifact" Caption=""/>
-    <GuideEntityEmbed Entity="ComplexXenoArtifactItem" Caption=""/>
-  </Box>
-
-  Artifacts contain [bold]nodes[/bold] arranged in [bold]layers[/bold].
-  - Unlocking a node unlocks connected nodes on upper layers.
-  - Each node has [bold]triggers[/bold] and an [bold]effect[/bold].
-  - Each node has [bold]durability[/bold]: the number of times it can be manually activated after being unlocked.
-  - Higher nodes are harder to reach but give more points.
-
-  Unlocking all nodes provides no special bonus, but every node yields points.
-
   ## Equipment
   <Box>
     <GuideEntityEmbed Entity="MachineArtifactAnalyzer" Caption="Analyzer"/>
@@ -39,53 +25,32 @@
     <GuideEntityEmbed Entity="CrateArtifactContainer" Caption="Artifact Container"/>
     <GuideEntityEmbed Entity="HandheldArtifactContainer" Caption="Handheld Container"/>
   </Box>
-  - [bold]Artifact Containers:[/bold] Safely store and transports artifacts and prevent nodes from triggering.
+  - [bold]Artifact Containers:[/bold] Safely store and transport artifacts and prevent nodes from triggering.
+
   <Box>
     <GuideEntityEmbed Entity="MachineArtifactCrusher" Caption="Crusher"/>
   </Box>
   - [bold]Artifact Crusher:[/bold] Crushes artifacts into fragments. Four fragments can be rebuilt into a new artifact.
+
   <Box>
     <GuideEntityEmbed Entity="ArtifactFragment" Caption="Artifact Fragment"/>
   </Box>
-  ## Unlocking Nodes
-  1. Select a node on the [bold]Analysis Console[/bold] to check its trigger and effect.
 
-  2. Perform its listed [bold]triggers[/bold] near the artifact, which will resonate with the message: [italic]"It begins to shift in strange ways..."[/italic]. The [bold]Node Scanner[/bold] will show if a specific node is being triggered.
+  ## Artifacts Overview
+  <Box>
+    <GuideEntityEmbed Entity="ComplexXenoArtifact" Caption=""/>
+    <GuideEntityEmbed Entity="ComplexXenoArtifactItem" Caption=""/>
+  </Box>
 
-  3. Once all triggers are met, the artifact will trigger its effect with the message: [italic]"It slows down, visibly changed."[/italic] and the node will become [bold][color=green]Active[/color][/bold] on the Console and can be manually activated by interacting with the artifact.
+  Artifacts contain [bold]nodes[/bold] arranged in [bold]layers[/bold].
+  - Unlocking a node unlocks connected nodes on upper layers.
+  - Each node has [bold]triggers[/bold] and an [bold]effect[/bold].
+  - Each node has [bold]durability[/bold]: the number of times it can be manually activated after being unlocked.
+  - Higher nodes are harder to reach but give more points.
 
-  Artifacts after having their first trigger met will have a window of 5 seconds to meet the remaining triggers, resetting every time a new trigger is met.
+  Unlocking all nodes provides no special bonus, but every node yields points.
 
-  If an artifact's activation fails, it will stop resonating with the message: [italic]"It slows down before uneventfully stopping."[/italic]
-
-  Order of trigger activation [bold]does not matter[/bold], [italic]however[/italic], it might in relation to other nodes. If multiple nodes have the same trigger, you may need to start with a trigger not present in other nodes.
-
-  [bold]Manual activation triggers all unlocked nodes at once and consumes durability.[/bold]
-
-  ## Analysis Console Interface
-  - [bold]ID:[/bold] Unique identifier for use with the Node Scanner.
-  - [bold]Class:[/bold] The layer name. Nodes on the same layer share it.
-  - [bold]Status:[/bold]
-  - [italic][color=red]Locked[/color][/italic] by default
-  - [italic][color=plum]Active[/color][/italic] when first triggered
-  - [italic][color=lime]Unlocked[/color][/italic] if a deeper node is reached (prevents manual activations)
-  - [bold]Durability:[/bold] Number of manual activations available for that node.
-  - [bold]Effect:[/bold] What happens when the node activates or is manually triggered.
-  - [bold]Triggers:[/bold] Required actions to activate the node the first time.
-  - [bold]Server/Extraction:[/bold] Choose a research server and extract points from unlocked nodes.
-
-  ## Triggers
-  Examples include:
-  - Examining the artifact
-  - Playing an instrument
-  - Damaging or throwing it
-  - Exposing it to gases (plasma, tritium, etc.)
-  - Changing pressure or temperature
-  - Using tools (screwdriver, multitool, crowbar, wrench)
-  - Splashing reagents (blood, water, ammonia, etc.)
-  - Killing something nearby
-
-  ## Effects
+  ## Effects Overview
   Effects can be:
   - [color=green]Harmless:[/color] producing plants, animals, or junk
   - [color=#00ccff]Helpful:[/color] charging batteries, creating instruments or money

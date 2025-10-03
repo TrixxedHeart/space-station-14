@@ -1,0 +1,17 @@
+<Document>
+  # Analysis Console Interface
+
+  The [bold]Analysis Console[/bold] is used to view and manage artifact nodes.
+
+  ## Node Information
+  - [bold]ID:[/bold] Unique identifier, shown by the Node Scanner during activation.
+  - [bold]Class:[/bold] The node’s layer. Nodes on the same layer share the same class.
+  - [bold]Status:[/bold]
+  - [italic][color=red]Locked[/color][/italic] – default state.
+  - [italic][color=plum]Active[/color][/italic] – unlocked by triggers; can be manually activated.
+  - [italic][color=lime]Unlocked[/color][/italic] – revealed when progressing deeper; cannot be manually activated.
+  - [bold]Durability:[/bold] Number of manual activations left.
+  - [bold]Effect:[/bold] What happens when the node activates.
+  - [bold]Triggers:[/bold] Required actions to activate the node the first time.
+  - [bold]Server/Extraction:[/bold] Choose a research server and extract points from unlocked nodes.
+</Document>

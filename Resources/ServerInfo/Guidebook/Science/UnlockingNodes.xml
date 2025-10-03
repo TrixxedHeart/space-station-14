@@ -1,0 +1,27 @@
+<Document>
+  # Unlocking Nodes
+
+  Unlocking nodes is how you progress through an artifact’s layers and extract research points.
+
+  ## Process
+  1. Select a node on the [bold]Analysis Console[/bold] to see its [bold]triggers[/bold] and [bold]effect[/bold].
+  2. Perform the listed triggers near the artifact. When correct, the artifact will resonate:
+  [italic]"It begins to shift in strange ways..."[/italic].
+  - The [bold]Node Scanner[/bold] shows which node ID is being triggered.
+  3. Once all triggers are met, the artifact activates its effect:
+  [italic]"It slows down, visibly changed."[/italic].
+  - The node becomes [bold][color=green]Active[/color][/bold] and can now be manually activated.
+
+  ## Timing
+  - After the first trigger is met, there is a 5 second window to perform the next one.
+  - The timer resets each time a new trigger is completed.
+  - If the timer runs out, the activation fails: [italic]"It slows down before uneventfully stopping."[/italic].
+
+  ## Order of Triggers
+  - Trigger order does not matter for a single node.
+  - If multiple nodes share a trigger, you may need to use other triggers first to progress.
+
+  ## Manual Activation
+  - Interacting with the artifact manually activates all [bold]Active[/bold] nodes at once.
+  - This consumes 1 durability from each triggered node.
+</Document>
