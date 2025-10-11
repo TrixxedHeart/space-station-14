@@ -1,0 +1,45 @@
+- type: species
+  id: Cyprin
+  name: species-name-cyprin
+  roundStart: true
+  prototype: MobCyprin
+  sprites: MobCyprinSprites
+  markingLimits: MobCyprinMarkingLimits
+  dollPrototype: MobCyprinDummy
+  skinColoration: Hues
+  Sexes: [Unsexed]
+
+- type: speciesBaseSprites
+  id: MobCyprinSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: MobReptilianHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Chest: MobReptilianTorso
+    Eyes: MobHumanoidEyes
+    HeadTop: MobHumanoidAnyMarking
+    LArm: MobReptilianLArm
+    RArm: MobReptilianRArm
+    LHand: MobReptilianLHand
+    RHand: MobReptilianRHand
+    LLeg: MobReptilianLLeg
+    RLeg: MobReptilianRLeg
+    LFoot: MobReptilianLFoot
+    RFoot: MobReptilianRFoot
+
+- type: markingPoints
+  id: MobCyprinMarkingLimits
+  points:
+    Special:
+      points: 0
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false

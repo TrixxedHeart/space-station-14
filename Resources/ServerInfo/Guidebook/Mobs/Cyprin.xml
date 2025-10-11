@@ -1,0 +1,38 @@
+<Document>
+  # Cyprin
+
+  <Box>
+    <GuideEntityEmbed Entity="MobCyprin" Caption=""/>
+  </Box>
+
+  [color=#ffa500]Caution! This species has unique neurological mechanics and is not recommended for new players.[/color]
+
+  Cyprin are an alien piscine species descended from space carp and dragons. Their minds are tuned to electromagnetic "Resonances" - powerful compulsions that guide their behavior. They breathe nitrogen and react unusually to different atmospheric gases.
+
+  ## Respiration
+  Cyprin breathe nitrogen, and can safely process station air. However due to their space carp ancestry some gases have unique effects on them:
+  - [bold]Beneficial:[bold] Carbon Dioxide (heals poison), Plasma (heals burns), Tritium (heals radiation), Ammonia (provides nutrition)
+  - [bold]Harmful:[bold] Frezon (toxic), Ammonia (causes drunkness)
+  - [bold]Neutral:[bold] Oxygen, Water Vapor, Nitrous Oxide (causes a high)
+
+  ## Resonances
+  [color=#ffa500]Resonances are roleplay guides, not strict rules. You are never forced to follow them if it risks safety or duties, and they do not override server rules or justify griefing.[/color]
+
+  The core of the Cyprin experience is defined by their Resonances. These are not personality quirks, but powerful, mysterious, and deeply ingrained cognitive patterns that arise from their unique brain structure, which is sensitive to ambient electromagnetic fields. The phenomenon is not scientifically understood, only observed to be shaped by EM waves. Many Cyprin see this as a religious or spiritual calling, a fundamental part of their existence they do not fully understand.
+
+  A Cyprin does not [italic]choose[/italic] their Resonances. At the start of every shift, their brain synchronizes with these fields, granting them:
+  - One Shared Resonance, common to all Cyprin on the station.
+  - Two to three Personal Resonances, unique to the individual.
+
+  A Cyprin will do what they can to meet their Resonances. If a must Cyprin violate them, they will experience significant neurological distress or discomfort. The specifics of that are up to you, but if a Resonance is violated, you must seek to correct your mistake immediately if possible.
+
+  ## Strengths & Weaknesses
+  They take [color=#1e90ff]10% less Heat damage and 20% less Radiation damage[color];
+  but [color=#ffa500]10% more Blunt, Slash, and Pierce damage, and have lower blood capacity (200u).[color]
+
+  ## Other Quirks
+  - [bold]Draconic Spark:[/bold] Cyprin have a vestigial fire igniting organ. They can breathe small flames equivalent to that of a lighter.
+  - [bold]Universal Gut:[/bold] Can safely consume raw meat, alien plants, and most organic matter
+  - [bold]Carpotoxin Immunity:[/bold] Naturally immune to carpotoxin effects
+  - [bold]Psychedelic Blood:[/bold] Cyprin blood has potent psychoactive properties for other species. Ingesting it causes intense hallucinations.
+</Document>

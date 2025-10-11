@@ -244,3 +244,57 @@
         damage:
           types:
             Cellular: 2
+
+- type: reagent
+  id: LuminalBrine
+  name: Luminal Brine
+  desc: The psychoactive, luminous blood of a Cyprin. Causes intense hallucinations in most species.
+  group: Biological
+  color: "#00eaff"
+  glow: true
+  glowColor: "#00eaff"
+  physicalDesc: iridescent
+  flavor: briny
+  recognizable: true
+  standsout: true
+  viscosity: 0.15
+  tileReactions:
+    - !type:SpillTileReaction
+  footstepSound:
+    collection: FootstepSlime
+    params:
+      volume: 7
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1.0
+        conditions:
+          - !type:OrganType
+            type: Human
+            shouldHave: false
+    Food:
+      effects:
+        - !type:AdjustReagent
+          reagent: UncookedAnimalProteins
+          amount: 0.1
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          groups:
+            Brute: -3
+            Burn: -1.25
+  plantMetabolism:
+    - !type:PlantAdjustWater
+      amount: 0.3
+  Narcotic:
+    effects:
+    - !type:ModifyStatusEffect
+      effectProto: StatusEffectSeeingRainbow
+      time: 16
+      type: Add
+      refresh: false

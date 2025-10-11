@@ -1,0 +1,11 @@
+- type: entity
+  save: false
+  name: Cyprin
+  parent: BaseMobCyprin
+  id: MobCyprin
+
+- type: entity
+  save: false
+  name: Cyprin Dummy
+  parent: BaseMobCyprin
+  id: MobCyprinDummy

@@ -4,6 +4,7 @@
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
   - Arachnid
+  - Cyprin
   - Diona
   - Dwarf
   - Human
@@ -17,6 +18,11 @@
   id: Arachnid
   name: species-name-arachnid
   text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
+
+- type: guideEntry
+  id: Cyprin
+  name: species-name-cyprin
+  text: "/ServerInfo/Guidebook/Mobs/Cyprin.xml"
 
 - type: guideEntry
   id: Diona

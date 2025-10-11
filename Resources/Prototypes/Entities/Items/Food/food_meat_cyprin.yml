@@ -1,0 +1,10 @@
+- type: entity
+  id: FoodMeatCyprin
+  name: cyprin meat
+  description: Meat from a Cyprin.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/meat.rsi
+    state: meat
+  - type: Flavor
+    flavors: [meat]

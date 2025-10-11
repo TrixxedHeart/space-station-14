@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseMobSpeciesOrganic
+  id: BaseMobCyprin
+  name: Cyprin
+  abstract: true
+  components:
+  - type: Hunger
+  - type: Icon
+    sprite: Mobs/Species/Cyprin/parts.rsi
+    state: full
+  - type: Thirst
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatCyprin
+      amount: 5
+  - type: HumanoidAppearance
+    species: Cyprin
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: Inventory
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Cyprin
+  - type: Bloodstream
+    BloodMaxVolume: 200
+    bloodReagent: LuminalBrine
+
