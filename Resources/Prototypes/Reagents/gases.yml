@@ -118,27 +118,56 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         damage:
           types:
             Poison: 3
+      # Cyprin benefit from Plasma - heals burn damage
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        scaleByQuantity: true
+        damage:
+          types:
+            Heat: -1
       - !type:AdjustReagent
         reagent: Inaprovaline
         amount: -2.0
     Gas:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
             Poison:
               1
+      # Cyprin benefit from Plasma - heals burn damage
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        scaleByQuantity: true
+        damage:
+          types:
+            Heat: -0.5
       # We need a metabolism effect on reagent removal
       - !type:AdjustAlert
         alertType: Toxins
         conditions:
           - !type:ReagentThreshold
             min: 1.5
+          - !type:OrganType
+            type: Cyprin
+            shouldHave: false
         clear: True
         time: 5
   reactiveEffects:
@@ -169,24 +198,53 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         damage:
           types:
             Radiation: 3
+      # Cyprin benefit from Tritium - heals radiation damage
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        scaleByQuantity: true
+        damage:
+          types:
+            Radiation: -0.5
     Gas:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
             Radiation:
               1
+      # Cyprin benefit from Tritium - heals radiation damage
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        scaleByQuantity: true
+        damage:
+          types:
+            Radiation: -0.5
       # We need a metabolism effect on reagent removal
       - !type:AdjustAlert
         alertType: Toxins
         conditions:
           - !type:ReagentThreshold
             min: 1.5
+          - !type:OrganType
+            type: Cyprin
+            shouldHave: false
         clear: True
         time: 5
 
@@ -212,12 +270,24 @@
         - !type:OrganType
           type: Vox
           shouldHave: false
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
             Poison:
               0.8
+      # Cyprin benefit from CO2 - heals poison damage
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        scaleByQuantity: true
+        damage:
+          types:
+            Poison: -0.5
       - !type:Oxygenate
         conditions:
         - !type:OrganType
@@ -238,6 +308,9 @@
         - !type:OrganType
           type: Vox
           shouldHave: false
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         # Don't want people to get toxin damage from the gas they just
         # exhaled, right?
         - !type:ReagentThreshold
@@ -248,10 +321,24 @@
           types:
             Poison:
               0.8
+      # Cyprin benefit from CO2 - heals poison damage
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        - !type:ReagentThreshold
+          min: 0.5
+        scaleByQuantity: true
+        damage:
+          types:
+            Poison: -0.5
       - !type:Oxygenate # carbon dioxide displaces oxygen from the bloodstream, causing asphyxiation
         conditions:
         - !type:OrganType
           type: Plant
+          shouldHave: false
+        - !type:OrganType
+          type: Cyprin
           shouldHave: false
         factor: -4
       # We need a metabolism effect on reagent removal
@@ -284,6 +371,10 @@
         conditions:
         - !type:OrganType
           type: Slime
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: Cyprin
       # Converts Nitrogen into CO2
       - !type:ModifyLungGas
         conditions:
@@ -298,6 +389,13 @@
           type: Slime
         ratios:
           NitrousOxide: 1.0
+          Nitrogen: -1.0
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        ratios:
+          CarbonDioxide: 1.0
           Nitrogen: -1.0
 
 - type: reagent
@@ -340,8 +438,20 @@
         emote: Scream
         showInChat: true
         probability: 0.01
+      # Cyprin metabolize nitrous oxide into happiness instead of getting high
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        - !type:ReagentThreshold
+          reagent: NitrousOxide
+          min: 0.3
+        reagent: Happiness
+        amount: 2.0
       - !type:PopupMessage
         conditions:
+        - !type:OrganType
+          type: Cyprin
         - !type:ReagentThreshold
           reagent: NitrousOxide
           min: 0.5
@@ -352,6 +462,8 @@
         visualType: Medium
         messages: [ "effect-sleepy" ]
         probability: 0.1
+        messages: [ "You feel wonderfully happy!" ]
+        probability: 0.2
       - !type:MovespeedModifier
         conditions:
         - !type:ReagentThreshold
@@ -359,6 +471,9 @@
           min: 1
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType
+          type: Cyprin
           shouldHave: false
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
@@ -370,6 +485,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         effectProto: StatusEffectForcedSleeping
         time: 3
         type: Add
@@ -380,6 +498,9 @@
           min: 3.5
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType
+          type: Cyprin
           shouldHave: false
         ignoreResistances: true
         damage:
@@ -403,17 +524,39 @@
     Narcotic:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
             Cellular: 1
+      # Cyprin take toxin damage from Frezon instead of cellular
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Poison: 2
       - !type:ModifyStatusEffect
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 15
         refresh: false
       - !type:Drunk
+        conditions:
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         boozePower: 15
       - !type:PopupMessage
         type: Local
@@ -432,6 +575,9 @@
         - !type:ReagentThreshold
           reagent: Frezon
           min: 1
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
     Gas:
       effects:
       - !type:HealthChange
@@ -439,16 +585,35 @@
         - !type:ReagentThreshold
           reagent: Frezon
           min: 0.5
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:
           types:
             Cellular: 0.5
+      # Cyprin take toxin damage from Frezon gas
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Frezon
+          min: 0.5
+        - !type:OrganType
+          type: Cyprin
+        scaleByQuantity: true
+        ignoreResistances: true
+        damage:
+          types:
+            Poison: 1.5
       - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentThreshold
           reagent: Frezon
           min: 1
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 500
@@ -459,6 +624,10 @@
         - !type:ReagentThreshold
           reagent: Frezon
           min: 1
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
+        boozePower: 500
       - !type:PopupMessage
         type: Local
         messages: [ "frezon-lungs-cold" ]
@@ -476,3 +645,6 @@
         - !type:ReagentThreshold
           reagent: Frezon
           min: 1
+        - !type:OrganType
+          type: Cyprin
+          shouldHave: false
