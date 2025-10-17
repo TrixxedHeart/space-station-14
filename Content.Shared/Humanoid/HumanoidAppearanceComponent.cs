@@ -4,9 +4,11 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
 using Robust.Shared.Enums;
 using Robust.Shared.GameStates;
+using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using System.Numerics;
 
 namespace Content.Shared.Humanoid;
 
@@ -106,6 +108,13 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public Dictionary<HumanoidVisualLayers, DisplacementData> MarkingsDisplacement = new();
+
+    /// <summary>
+    ///     Offsets that will be applied to specific marking layers of the humanoid.
+    ///     This is separate from displacement and allows for positioning markings without worrying about displacement boundaries.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Dictionary<HumanoidVisualLayers, System.Numerics.Vector2> MarkingOffsets = new();
 }
 
 [DataDefinition]

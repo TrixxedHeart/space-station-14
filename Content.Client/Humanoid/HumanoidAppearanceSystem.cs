@@ -9,6 +9,7 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Numerics;
 
 namespace Content.Client.Humanoid;
 
@@ -105,6 +106,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var layer = sprite[layerIndex];
         layer.Visible = !IsHidden(component, key);
 
+        // Apply any marking offset configured on the humanoid for this layer. This moves the whole sprite.
+        ApplyLayerOffset(entity, layerIndex, key);
+
         if (color != null)
             layer.Color = color.Value;
 
@@ -122,6 +126,27 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         if (proto.BaseSprite != null)
             _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, proto.BaseSprite);
+    }
+
+
+    /// <summary>
+    /// Applies the configured marking offset for the given humanoid visual layer to the specified
+    /// sprite layer. If the humanoid has no offset configured for that layer, the sprite layer's
+    /// offset is reset to zero to avoid leftover offsets from previous species or previous offsets.
+    /// </summary>
+    private void ApplyLayerOffset(Entity<HumanoidAppearanceComponent, SpriteComponent> entity, int layerIndex, HumanoidVisualLayers layerKey)
+    {
+        var component = entity.Comp1;
+        var sprite = entity.Comp2;
+
+        if (component.MarkingOffsets.TryGetValue(layerKey, out var offset))
+        {
+            _sprite.LayerSetOffset((entity.Owner, sprite), layerIndex, offset);
+            return;
+        }
+
+        // Reset to zero if no offset value.
+        _sprite.LayerSetOffset((entity.Owner, sprite), layerIndex, Vector2.Zero);
     }
 
     /// <summary>
@@ -367,6 +392,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 var layer = _sprite.AddLayer((entity.Owner, sprite), markingSprite, targetLayer + j + 1);
                 _sprite.LayerMapSet((entity.Owner, sprite), layerId, layer);
                 _sprite.LayerSetSprite((entity.Owner, sprite), layerId, rsi);
+
+                // Apply the configured offset (or reset it)
+                ApplyLayerOffset(entity, layer, markingPrototype.BodyPart);
             }
 
             _sprite.LayerSetVisible((entity.Owner, sprite), layerId, visible);
