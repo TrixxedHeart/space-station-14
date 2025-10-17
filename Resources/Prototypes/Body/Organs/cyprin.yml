@@ -1,0 +1,20 @@
+- type: entity
+  id: OrganCyprinLungs
+  parent: OrganHumanLungs
+  name: lungs
+  description: "The specialized lungs of a cyprin, adapted to filter nitrogen from the atmosphere instead of oxygen."
+  suffix: "cyprin"
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    layers:
+      - state: lung-l
+      - state: lung-r
+  - type: Metabolizer
+    metabolizerTypes: [ Cyprin ]
+  - type: Lung
+    alert: LowNitrogen
+  - type: Item
+    size: Small
+    heldPrefix: lungs
+

@@ -1,0 +1,9 @@
+# Head Markings (Head)
+- type: marking
+  id: CyprinTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Cyprin ]
+  sprites:
+  - sprite: Mobs/Customization/Cyprin/tails.rsi
+    state: tail

@@ -1,0 +1,14 @@
+- type: marking
+  id: CyprinHairClassicLong2
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: Mobs/Customization/Cyprin/hair.rsi
+    state: classiclong2
+- type: marking
+  id: CyprinHairClassicLong3
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: Mobs/Customization/Cyprin/hair.rsi
+    state: classiclong3

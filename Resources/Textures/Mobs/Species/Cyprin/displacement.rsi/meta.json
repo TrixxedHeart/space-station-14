@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "mrrrrow",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "load": {
+        "srgb": false
+    },
+    "states": [
+        {
+            "name": "jumpsuit"
+        },
+        {
+            "name": "outerwear"
+        },
+        {
+            "name": "shoes"
+        },
+        {
+            "name": "ears"
+        },
+		{
+			"name": "hair"
+		}
+    ]
+}
