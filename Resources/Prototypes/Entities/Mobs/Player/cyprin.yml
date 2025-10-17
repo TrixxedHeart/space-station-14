@@ -6,6 +6,6 @@
 
 - type: entity
   save: false
-  name: Cyprin Dummy
+  name: Urist McFins
   parent: BaseMobCyprin
   id: MobCyprinDummy
